@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            background: linear-gradient(45deg, #00ffcc, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.5);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00ffcc, #00ccff);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #00ffcc;
+        }
+
+        .card-content {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ffcc, #00ccff);
+            color: #0f2027;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .showcase {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .css-element {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .element1 {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .element2 {
+            background: linear-gradient(45deg, #4ecdc4, #556270);
+            box-shadow: 0 10px 20px rgba(78, 205, 196, 0.3);
+            border-radius: 50%;
+        }
+
+        .element3 {
+            background: linear-gradient(45deg, #ffafbd, #ffc3a0);
+            box-shadow: 0 10px 20px rgba(255, 175, 189, 0.3);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .element4 {
+            background: linear-gradient(45deg, #7f00ff, #e100ff);
+            box-shadow: 0 10px 20px rgba(127, 0, 255, 0.3);
+            border-radius: 15px 50px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #00ffcc;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .css-element {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Modern CSS Showcase</h1>
+            <p class="subtitle">Explore the power of modern CSS features</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h3 class="card-title">Flexbox & Grid</h3>
+                <p class="card-content">Modern layout techniques that make responsive design easier and more powerful than ever before.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Animations</h3>
+                <p class="card-content">Create smooth, performant animations using CSS keyframes and transitions without JavaScript.</p>
+                <a href="#" class="btn">See Examples</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Gradients & Shadows</h3>
+                <p class="card-content">Add depth and dimension to your designs with advanced gradient and shadow effects.</p>
+                <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+
+        <div class="showcase">
+            <div class="css-element element1">Box Shadow</div>
+            <div class="css-element element2">Border Radius</div>
+            <div class="css-element element3">Clip Path</div>
+            <div class="css-element element4">Gradient</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3 class="card-title">Variables</h3>
+                <p class="card-content">Use CSS custom properties for consistent theming and easier maintenance.</p>
+                <a href="#" class="btn">Try It</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Filters & Backdrop</h3>
+                <p class="card-content">Apply visual effects like blur and contrast adjustment to elements.</p>
+                <a href="#" class="btn">Demo</a>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Responsive Design</h3>
+                <p class="card-content">Create websites that look great on all devices with media queries and flexible layouts.</p>
+                <a href="#" class="btn">Learn</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Created with pure CSS - No frameworks or libraries</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-codepen"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-css3-alt"></i></a>
+                <a href="#"><i class="fab fa-html5"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            const elements = document.querySelectorAll('.css-element');
+            
+            // Animate cards
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Animate showcase elements
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = 1;
+                    element.style.transform = 'scale(1) rotate(0deg)';
+                }, 300 * index);
+            });
+        });
+    </script>
+</body>
+</html>
